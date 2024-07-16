@@ -1,0 +1,16 @@
+#yeh configuration hamari discovery service
+#ke liye hai jo fetch ki jaaye gi
+eureka:
+  instance:
+    hostname: localhost
+  eureka:
+    instance:
+      hostname: localhost
+    client:
+      #    VIMP DISCOVERY SERVICE SHOULD NOT REGISTER WITH ITSELF
+      register-with-eureka: false
+      fetch-registry: false
+      serviceUrl:
+        defaultZone: http://${eureka.instance.hostname}/${server.port}/eureka/
+  server:
+    port: 8761
